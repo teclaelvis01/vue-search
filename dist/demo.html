@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<title>vue-search demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./vue-search.umd.js"></script>
+
+<link rel="stylesheet" href="./vue-search.css">
+
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: vue-search
+  }
+}).$mount('#app')
+</script>

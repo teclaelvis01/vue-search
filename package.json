@@ -1,10 +1,11 @@
 {
-  "name": "vue-search",
-  "version": "0.0.2",
+  "name": "vue-input-search",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "prod": "vue-cli-service build --target lib --name vue-search",
     "lint": "vue-cli-service lint"
   },
   "author": {
@@ -25,12 +26,12 @@
   "unpkg": "dist/vue-search.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elvis/vue-instant.git"
+    "url": "git+https://github.com/teclaelvis01/vue-search"
   },
   "bugs": {
-    "url": "https://github.com/santiblanko/vue-instant/issues"
+    "url": "https://github.com/teclaelvis01/vue-search/issues"
   },
-  "homepage": "https://github.com/santiblanko/vue-instant#readme",
+  "homepage": "https://github.com/teclaelvis01/vue-search#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.3.2",
