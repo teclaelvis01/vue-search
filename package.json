@@ -1,14 +1,40 @@
 {
   "name": "vue-search",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.2",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "author": {
+    "name": "Elvis Reyes",
+    "email": "teclaelvis01@gmail.com"
+  },
+  "keywords": [
+    "vue",
+    "search",
+    "plugin",
+    "autocomplete",
+    "instant",
+    "searchbox",
+    "component"
+  ],
+  "license": "MIT",
+  "main": "dist/vue-search.js",
+  "unpkg": "dist/vue-search.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elvis/vue-instant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/santiblanko/vue-instant/issues"
+  },
+  "homepage": "https://github.com/santiblanko/vue-instant#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.3.2",
+    "s": "^1.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
