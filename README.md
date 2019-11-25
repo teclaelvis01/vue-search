@@ -1,13 +1,25 @@
-# vue-search
+# vue-input-search
 
-## Project setup
+[![header](vue-input-search.git)](https://github.com/teclaelvis01/vue-search)
+
+## Installation
 ```
-npm install
+npm i vue-input-search
 ```
 
-### Compiles and hot-reloads for development
+### Default import
+Install all the components:
 ```
-npm run serve
+
+import 'vue-input-search/dist/vue-search.css'
+import VueSearch from 'vue-input-search/dist/vue-search.common'
+
+const app = new Vue({
+    el: '#app',
+    components:{
+        'vue-search':VueSearch
+    }
+}
 ```
 
 ### Compiles and minifies for production

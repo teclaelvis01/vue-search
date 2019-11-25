@@ -19,18 +19,18 @@
         <div v-if="text!='' && is_show" class="show-result">
           <li :key="idx" v-for="(dato,idx) of dataFiltered" class="ui-menu-item item-found">
             <a @click="onSelectItem(dato)" class="ui-item-result person" tabindex="-1">
-              <span class="f-l mr-1 avatar">
+              <span v-if="imgPhoto!=''" class="f-l mr-1 avatar">
                 <img :src="imgPhoto" alt="person avatar" />
               </span>
               <div class="info-container">
                 <div style="max-width: 150px;">
                   <span class="name">{{dato.name}}</span>
                   <div class="info-group">
-                    <span class="phone">
+                    <span v-if="dato.phone!=null" class="phone">
                       <span v-if="dato.phone">{{dato.phone}}</span>
                       <span v-else>No Phone Number</span>
                     </span>
-                    <span class="email">{{dato.email}}</span>
+                    <span v-if="dato.email!=null" class="email">{{dato.email}}</span>
                   </div>
                 </div>
                 <div class="info-group info-end">
@@ -51,7 +51,7 @@
           </a>
         </li>
 
-        <li class="ui-menu-item">
+        <li v-if="showNewBotton" class="ui-menu-item">
           <a @click="onNewItem()" class="create-new-person btn">{{txtBtnNew}}</a>
         </li>
       </ul>
@@ -66,13 +66,21 @@ export default {
   name: "vue-search",
   props: {
     placeholder: String,
+    showNewBotton: {
+      type:Boolean,
+      default:true
+    },
+    searchByField: {
+      type:Boolean,
+      default:true
+    },
     txtNotFound: {
       type: String,
       default: "No one found with that name."
     },
     txtBtnNew: {
       type: String,
-      default: "Create A New Person"
+      default: "Create A New Element"
     },
     inputClass: Object,
     model: String,
@@ -124,9 +132,9 @@ export default {
       this.$emit("newitem",this.text);
     },
     onSelectItem(dato) {
-      this.$emit("itemselected", dato);
       this.is_show = false;
       this.text = dato.name;
+      this.$emit("itemselected", dato);
     },
     writeup() {
       clearTimeout(this.typingTimer);
@@ -141,8 +149,12 @@ export default {
       }
     },
     search() {
+      let url = this.ApiSource;
+      if(this.searchByField){
+        url = "?" + this.SourceField + "=" + this.text
+      }
       axios
-        .get(this.ApiSource + "?" + this.SourceField + "=" + this.text)
+        .get(url)
         .then(res => {
           this.SourceData = res.data;
           this.onFilter();

@@ -7,6 +7,8 @@
     @newitem="newitem()" 
     @itemselected="itemselected($event)" 
     :source-field="'name'" 
+    :show-new-botton="true"
+    :search-by-field="false"
     :api-source="'https://jsonplaceholder.typicode.com/users'"
     ></vue-search>
 
