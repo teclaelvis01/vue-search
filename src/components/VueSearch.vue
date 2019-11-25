@@ -26,11 +26,11 @@
                 <div style="max-width: 150px;">
                   <span class="name">{{dato.name}}</span>
                   <div class="info-group">
-                    <span v-if="dato.phone!=null" class="phone">
+                    <span v-if="dato.phone!=undefined" class="phone">
                       <span v-if="dato.phone">{{dato.phone}}</span>
                       <span v-else>No Phone Number</span>
                     </span>
-                    <span v-if="dato.email!=null" class="email">{{dato.email}}</span>
+                    <span v-if="dato.email!=undefined" class="email">{{dato.email}}</span>
                   </div>
                 </div>
                 <div class="info-group info-end">
