@@ -3440,12 +3440,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"61e7e7d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueSearch.vue?vue&type=template&id=3a53b20e&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"content-input",attrs:{"id":"input-content"}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],staticClass:"input-txt",class:_vm.inputClass,attrs:{"type":"text","placeholder":_vm.placeholder},domProps:{"value":(_vm.text)},on:{"keydown":function($event){return _vm.writedown($event)},"keyup":function($event){return _vm.writeup($event)},"focus":function($event){_vm.is_show = true},"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('ul',{staticClass:"ui-autocomplete",class:{active:_vm.text!='' && _vm.is_show}},[(_vm.text!='' && _vm.is_show)?_c('div',{staticClass:"show-result"},_vm._l((_vm.dataFiltered),function(dato,idx){return _c('li',{key:idx,staticClass:"ui-menu-item item-found"},[_c('a',{staticClass:"ui-item-result person",attrs:{"tabindex":"-1"},on:{"click":function($event){return _vm.onSelectItem(dato)}}},[_c('span',{staticClass:"f-l mr-1 avatar"},[_c('img',{attrs:{"src":_vm.imgPhoto,"alt":"person avatar"}})]),_c('div',{staticClass:"info-container"},[_c('div',{staticStyle:{"max-width":"150px"}},[_c('span',{staticClass:"name"},[_vm._v(_vm._s(dato.name))]),_c('div',{staticClass:"info-group"},[_c('span',{staticClass:"phone"},[(dato.phone)?_c('span',[_vm._v(_vm._s(dato.phone))]):_c('span',[_vm._v("No Phone Number")])]),_c('span',{staticClass:"email"},[_vm._v(_vm._s(dato.email))])])]),_c('div',{staticClass:"info-group info-end"},[(dato.type)?_c('em',{staticClass:"age-group"},[_vm._v("Adult")]):_vm._e(),_c('em',{staticClass:"membership"}),(dato.addess)?_c('em',{staticClass:"address"},[_vm._v("No Address")]):_vm._e()])]),_c('div')])])}),0):_vm._e(),(_vm.dataFiltered.length==0)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"ui-item-result person-not-found ui-menu-item-wrapper",attrs:{"tabindex":"-1"}},[_c('div',{staticClass:"text-helper"},[_vm._v(_vm._s(_vm.txtNotFound))]),_c('span',{staticClass:"icon-wrap"})])]):_vm._e(),_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"create-new-person btn",on:{"click":function($event){return _vm.onNewItem()}}},[_vm._v(_vm._s(_vm.txtBtnNew))])])])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"61e7e7d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueSearch.vue?vue&type=template&id=2ab387a1&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"content-input",attrs:{"id":"input-content"}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],staticClass:"input-txt",class:_vm.inputClass,attrs:{"type":"text","placeholder":_vm.placeholder},domProps:{"value":(_vm.text)},on:{"keydown":function($event){return _vm.writedown($event)},"keyup":function($event){return _vm.writeup($event)},"focus":function($event){_vm.is_show = true},"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('ul',{staticClass:"ui-autocomplete",class:{active:_vm.text!='' && _vm.is_show}},[(_vm.text!='' && _vm.is_show)?_c('div',{staticClass:"show-result"},_vm._l((_vm.dataFiltered),function(dato,idx){return _c('li',{key:idx,staticClass:"ui-menu-item item-found"},[_c('a',{staticClass:"ui-item-result person",attrs:{"tabindex":"-1"},on:{"click":function($event){return _vm.onSelectItem(dato)}}},[(_vm.imgPhoto!='')?_c('span',{staticClass:"f-l mr-1 avatar"},[_c('img',{attrs:{"src":_vm.imgPhoto,"alt":"person avatar"}})]):_vm._e(),_c('div',{staticClass:"info-container"},[_c('div',{staticStyle:{"max-width":"150px"}},[_c('span',{staticClass:"name"},[_vm._v(_vm._s(dato.name))]),_c('div',{staticClass:"info-group"},[(dato.phone!=null)?_c('span',{staticClass:"phone"},[(dato.phone)?_c('span',[_vm._v(_vm._s(dato.phone))]):_c('span',[_vm._v("No Phone Number")])]):_vm._e(),(dato.email!=null)?_c('span',{staticClass:"email"},[_vm._v(_vm._s(dato.email))]):_vm._e()])]),_c('div',{staticClass:"info-group info-end"},[(dato.type)?_c('em',{staticClass:"age-group"},[_vm._v("Adult")]):_vm._e(),_c('em',{staticClass:"membership"}),(dato.addess)?_c('em',{staticClass:"address"},[_vm._v("No Address")]):_vm._e()])]),_c('div')])])}),0):_vm._e(),(_vm.dataFiltered.length==0)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"ui-item-result person-not-found ui-menu-item-wrapper",attrs:{"tabindex":"-1"}},[_c('div',{staticClass:"text-helper"},[_vm._v(_vm._s(_vm.txtNotFound))]),_c('span',{staticClass:"icon-wrap"})])]):_vm._e(),(_vm.showNewBotton)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"create-new-person btn",on:{"click":function($event){return _vm.onNewItem()}}},[_vm._v(_vm._s(_vm.txtBtnNew))])]):_vm._e()])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueSearch.vue?vue&type=template&id=3a53b20e&
+// CONCATENATED MODULE: ./src/components/VueSearch.vue?vue&type=template&id=2ab387a1&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.index-of.js
 var es_array_index_of = __webpack_require__("c975");
@@ -3532,13 +3532,21 @@ var axios = __webpack_require__("bc3a");
   name: "vue-search",
   props: {
     placeholder: String,
+    showNewBotton: {
+      type: Boolean,
+      default: true
+    },
+    searchByField: {
+      type: Boolean,
+      default: true
+    },
     txtNotFound: {
       type: String,
       default: "No one found with that name."
     },
     txtBtnNew: {
       type: String,
-      default: "Create A New Person"
+      default: "Create A New Element"
     },
     inputClass: Object,
     model: String,
@@ -3594,9 +3602,9 @@ var axios = __webpack_require__("bc3a");
       this.$emit("newitem", this.text);
     },
     onSelectItem: function onSelectItem(dato) {
-      this.$emit("itemselected", dato);
       this.is_show = false;
       this.text = dato.name;
+      this.$emit("itemselected", dato);
     },
     writeup: function writeup() {
       clearTimeout(this.typingTimer);
@@ -3613,7 +3621,13 @@ var axios = __webpack_require__("bc3a");
     search: function search() {
       var _this2 = this;
 
-      axios.get(this.ApiSource + "?" + this.SourceField + "=" + this.text).then(function (res) {
+      var url = this.ApiSource;
+
+      if (this.searchByField) {
+        url = "?" + this.SourceField + "=" + this.text;
+      }
+
+      axios.get(url).then(function (res) {
         _this2.SourceData = res.data;
 
         _this2.onFilter();
