@@ -47,6 +47,7 @@ Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 placeholder | String | '' | Placeholder text
 showNewBotton | Boolean | true | Show or not the new bottom
+isRequired | Boolean | false | is required
 enableClassBase | Boolean | true | Show or not 'content-input'
 searchByField | Boolean | true | Enable find by field name of datasource
 txtNotFound | String | 'No one found with that name' | Text when there is no data

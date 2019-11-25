@@ -1,6 +1,6 @@
 {
   "name": "vue-input-search",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",

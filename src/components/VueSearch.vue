@@ -1,60 +1,58 @@
 <template>
-    <div :class="{'content-input':enableClassBase}" id="input-content">
-      <input
-        v-model="text"
-        @keydown="writedown($event)"
-        @keyup="writeup($event)"
-        @focus="is_show = true"
-        class="input-txt"
-        :class="inputClass"
-        type="text"
-        :placeholder="placeholder"
-      />
+  <div :class="{'content-input':enableClassBase}" id="input-content">
+    <input
+      v-model="text"
+      @keydown="writedown($event)"
+      @keyup="writeup($event)"
+      @focus="onFocus()"
+      class="input-txt"
+      :class="inputClass"
+      type="text"
+      :required="isRequired"
+      :placeholder="placeholder"
+    />
 
-      <ul
-        class="ui-autocomplete"
-        :class="{active:text!='' && is_show}"
-      >
-        <div v-if="text!='' && is_show" class="show-result">
-          <li :key="idx" v-for="(dato,idx) of dataFiltered" class="ui-menu-item item-found">
-            <a @click="onSelectItem(dato)" class="ui-item-result person" tabindex="-1">
-              <span v-if="imgPhoto!=''" class="f-l mr-1 avatar">
-                <img :src="imgPhoto" alt="person avatar" />
-              </span>
-              <div class="info-container">
-                <div style="max-width: 150px;">
-                  <span class="name">{{dato.name}}</span>
-                  <div class="info-group">
-                    <span v-if="dato.phone!=undefined" class="phone">
-                      <span v-if="dato.phone">{{dato.phone}}</span>
-                      <span v-else>No Phone Number</span>
-                    </span>
-                    <span v-if="dato.email!=undefined" class="email">{{dato.email}}</span>
-                  </div>
-                </div>
-                <div class="info-group info-end">
-                  <em v-if="dato.type" class="age-group">Adult</em>
-                  <em class="membership"></em>
-                  <em v-if="dato.addess" class="address">No Address</em>
+    <ul class="ui-autocomplete" :class="{active:text!='' && is_show}">
+      <div v-if="text!='' && is_show" class="show-result">
+        <li :key="idx" v-for="(dato,idx) of dataFiltered" class="ui-menu-item item-found">
+          <a @click="onSelectItem(dato)" class="ui-item-result person" tabindex="-1">
+            <span v-if="imgPhoto!=''" class="f-l mr-1 avatar">
+              <img :src="imgPhoto" alt="person avatar" />
+            </span>
+            <div class="info-container">
+              <div style="max-width: 150px;">
+                <span class="name">{{dato.name}}</span>
+                <div class="info-group">
+                  <span v-if="dato.phone!=undefined" class="phone">
+                    <span v-if="dato.phone">{{dato.phone}}</span>
+                    <span v-else>No Phone Number</span>
+                  </span>
+                  <span v-if="dato.email!=undefined" class="email">{{dato.email}}</span>
                 </div>
               </div>
-              <div></div>
-            </a>
-          </li>
-        </div>
-
-        <li v-if="dataFiltered.length==0" class="ui-menu-item">
-          <a class="ui-item-result person-not-found ui-menu-item-wrapper" tabindex="-1">
-            <div class="text-helper">{{txtNotFound}}</div>
-            <span class="icon-wrap"></span>
+              <div class="info-group info-end">
+                <em v-if="dato.type" class="age-group">Adult</em>
+                <em class="membership"></em>
+                <em v-if="dato.addess" class="address">No Address</em>
+              </div>
+            </div>
+            <div></div>
           </a>
         </li>
+      </div>
 
-        <li v-if="showNewBotton" class="ui-menu-item">
-          <a @click="onNewItem()" class="create-new-person btn">{{txtBtnNew}}</a>
-        </li>
-      </ul>
-    </div>
+      <li v-if="dataFiltered.length==0" class="ui-menu-item">
+        <a class="ui-item-result person-not-found ui-menu-item-wrapper" tabindex="-1">
+          <div class="text-helper">{{txtNotFound}}</div>
+          <span class="icon-wrap"></span>
+        </a>
+      </li>
+
+      <li v-if="showNewBotton" class="ui-menu-item">
+        <a @click="onNewItem()" class="create-new-person btn">{{txtBtnNew}}</a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -64,17 +62,22 @@ export default {
   name: "vue-search",
   props: {
     placeholder: String,
+    initialText: String,
+    isRequired: {
+      type: Boolean,
+      default: false
+    },
     enableClassBase: {
-      type:Boolean,
-      default:true
+      type: Boolean,
+      default: true
     },
     showNewBotton: {
-      type:Boolean,
-      default:true
+      type: Boolean,
+      default: true
     },
     searchByField: {
-      type:Boolean,
-      default:true
+      type: Boolean,
+      default: true
     },
     txtNotFound: {
       type: String,
@@ -109,12 +112,13 @@ export default {
       typingTimer: null,
       doneTypingInterval: 300,
       SourceData: [],
-      dataFiltered: []
+      dataFiltered: [],
+      is_read_initial_tex: false
     };
   },
   mounted() {
     this.SourceData = this.DataDefault;
-    document.addEventListener("click", (evt) => {
+    document.addEventListener("click", evt => {
       var flyoutElement = document.getElementById("input-content"),
         targetElement = evt.target; // clicked element
       do {
@@ -126,12 +130,24 @@ export default {
       } while (targetElement);
 
       // This is a click outside.
-      this.is_show = false
+      this.is_show = false;
     });
+
+    if (this.initialText != "") {
+      this.is_show = false;
+      this.text = this.initialText;
+    }
   },
   methods: {
+    onFocus: function() {
+      if (this.initialText != "" && !this.is_read_initial_tex) {
+        this.is_read_initial_tex = true;
+        return;
+      }
+      this.is_show = true;
+    },
     onNewItem: function() {
-      this.$emit("newitem",this.text);
+      this.$emit("newitem", this.text);
     },
     onSelectItem(dato) {
       this.is_show = false;
@@ -152,15 +168,13 @@ export default {
     },
     search() {
       let url = this.ApiSource;
-      if(this.searchByField){
-        url += "?" + this.SourceField + "=" + this.text
+      if (this.searchByField) {
+        url += "?" + this.SourceField + "=" + this.text;
       }
-      axios
-        .get(url)
-        .then(res => {
-          this.SourceData = res.data;
-          this.onFilter();
-        });
+      axios.get(url).then(res => {
+        this.SourceData = res.data;
+        this.onFilter();
+      });
     },
     onFilter() {
       let textFilter = this.text.toLowerCase();
@@ -178,6 +192,10 @@ export default {
   },
   watch: {
     text(val) {
+      if (!this.is_read_initial_tex) {
+        this.is_read_initial_tex = true;
+        return;
+      }
       this.onFilter();
     }
   }

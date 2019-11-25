@@ -7,6 +7,7 @@
     @newitem="newitem()" 
     @itemselected="itemselected($event)" 
     :source-field="'name'" 
+    :initial-text="'name'" 
     :show-new-botton="true"
     :search-by-field="false"
     :api-source="'https://jsonplaceholder.typicode.com/users'"

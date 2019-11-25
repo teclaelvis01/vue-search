@@ -3449,12 +3449,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"61e7e7d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueSearch.vue?vue&type=template&id=9bc69594&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{'content-input':_vm.enableClassBase},attrs:{"id":"input-content"}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],staticClass:"input-txt",class:_vm.inputClass,attrs:{"type":"text","placeholder":_vm.placeholder},domProps:{"value":(_vm.text)},on:{"keydown":function($event){return _vm.writedown($event)},"keyup":function($event){return _vm.writeup($event)},"focus":function($event){_vm.is_show = true},"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('ul',{staticClass:"ui-autocomplete",class:{active:_vm.text!='' && _vm.is_show}},[(_vm.text!='' && _vm.is_show)?_c('div',{staticClass:"show-result"},_vm._l((_vm.dataFiltered),function(dato,idx){return _c('li',{key:idx,staticClass:"ui-menu-item item-found"},[_c('a',{staticClass:"ui-item-result person",attrs:{"tabindex":"-1"},on:{"click":function($event){return _vm.onSelectItem(dato)}}},[(_vm.imgPhoto!='')?_c('span',{staticClass:"f-l mr-1 avatar"},[_c('img',{attrs:{"src":_vm.imgPhoto,"alt":"person avatar"}})]):_vm._e(),_c('div',{staticClass:"info-container"},[_c('div',{staticStyle:{"max-width":"150px"}},[_c('span',{staticClass:"name"},[_vm._v(_vm._s(dato.name))]),_c('div',{staticClass:"info-group"},[(dato.phone!=undefined)?_c('span',{staticClass:"phone"},[(dato.phone)?_c('span',[_vm._v(_vm._s(dato.phone))]):_c('span',[_vm._v("No Phone Number")])]):_vm._e(),(dato.email!=undefined)?_c('span',{staticClass:"email"},[_vm._v(_vm._s(dato.email))]):_vm._e()])]),_c('div',{staticClass:"info-group info-end"},[(dato.type)?_c('em',{staticClass:"age-group"},[_vm._v("Adult")]):_vm._e(),_c('em',{staticClass:"membership"}),(dato.addess)?_c('em',{staticClass:"address"},[_vm._v("No Address")]):_vm._e()])]),_c('div')])])}),0):_vm._e(),(_vm.dataFiltered.length==0)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"ui-item-result person-not-found ui-menu-item-wrapper",attrs:{"tabindex":"-1"}},[_c('div',{staticClass:"text-helper"},[_vm._v(_vm._s(_vm.txtNotFound))]),_c('span',{staticClass:"icon-wrap"})])]):_vm._e(),(_vm.showNewBotton)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"create-new-person btn",on:{"click":function($event){return _vm.onNewItem()}}},[_vm._v(_vm._s(_vm.txtBtnNew))])]):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"61e7e7d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueSearch.vue?vue&type=template&id=0abf6ba6&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{'content-input':_vm.enableClassBase},attrs:{"id":"input-content"}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],staticClass:"input-txt",class:_vm.inputClass,attrs:{"type":"text","required":_vm.isRequired,"placeholder":_vm.placeholder},domProps:{"value":(_vm.text)},on:{"keydown":function($event){return _vm.writedown($event)},"keyup":function($event){return _vm.writeup($event)},"focus":function($event){return _vm.onFocus()},"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('ul',{staticClass:"ui-autocomplete",class:{active:_vm.text!='' && _vm.is_show}},[(_vm.text!='' && _vm.is_show)?_c('div',{staticClass:"show-result"},_vm._l((_vm.dataFiltered),function(dato,idx){return _c('li',{key:idx,staticClass:"ui-menu-item item-found"},[_c('a',{staticClass:"ui-item-result person",attrs:{"tabindex":"-1"},on:{"click":function($event){return _vm.onSelectItem(dato)}}},[(_vm.imgPhoto!='')?_c('span',{staticClass:"f-l mr-1 avatar"},[_c('img',{attrs:{"src":_vm.imgPhoto,"alt":"person avatar"}})]):_vm._e(),_c('div',{staticClass:"info-container"},[_c('div',{staticStyle:{"max-width":"150px"}},[_c('span',{staticClass:"name"},[_vm._v(_vm._s(dato.name))]),_c('div',{staticClass:"info-group"},[(dato.phone!=undefined)?_c('span',{staticClass:"phone"},[(dato.phone)?_c('span',[_vm._v(_vm._s(dato.phone))]):_c('span',[_vm._v("No Phone Number")])]):_vm._e(),(dato.email!=undefined)?_c('span',{staticClass:"email"},[_vm._v(_vm._s(dato.email))]):_vm._e()])]),_c('div',{staticClass:"info-group info-end"},[(dato.type)?_c('em',{staticClass:"age-group"},[_vm._v("Adult")]):_vm._e(),_c('em',{staticClass:"membership"}),(dato.addess)?_c('em',{staticClass:"address"},[_vm._v("No Address")]):_vm._e()])]),_c('div')])])}),0):_vm._e(),(_vm.dataFiltered.length==0)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"ui-item-result person-not-found ui-menu-item-wrapper",attrs:{"tabindex":"-1"}},[_c('div',{staticClass:"text-helper"},[_vm._v(_vm._s(_vm.txtNotFound))]),_c('span',{staticClass:"icon-wrap"})])]):_vm._e(),(_vm.showNewBotton)?_c('li',{staticClass:"ui-menu-item"},[_c('a',{staticClass:"create-new-person btn",on:{"click":function($event){return _vm.onNewItem()}}},[_vm._v(_vm._s(_vm.txtBtnNew))])]):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueSearch.vue?vue&type=template&id=9bc69594&
+// CONCATENATED MODULE: ./src/components/VueSearch.vue?vue&type=template&id=0abf6ba6&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.index-of.js
 var es_array_index_of = __webpack_require__("c975");
@@ -3531,14 +3531,17 @@ var es_string_search = __webpack_require__("841c");
 //
 //
 //
-//
-//
 var axios = __webpack_require__("bc3a");
 
 /* harmony default export */ var VueSearchvue_type_script_lang_js_ = ({
   name: "vue-search",
   props: {
     placeholder: String,
+    initialText: String,
+    isRequired: {
+      type: Boolean,
+      default: false
+    },
     enableClassBase: {
       type: Boolean,
       default: true
@@ -3584,7 +3587,8 @@ var axios = __webpack_require__("bc3a");
       typingTimer: null,
       doneTypingInterval: 300,
       SourceData: [],
-      dataFiltered: []
+      dataFiltered: [],
+      is_read_initial_tex: false
     };
   },
   mounted: function mounted() {
@@ -3607,8 +3611,21 @@ var axios = __webpack_require__("bc3a");
 
       _this.is_show = false;
     });
+
+    if (this.initialText != "") {
+      this.is_show = false;
+      this.text = this.initialText;
+    }
   },
   methods: {
+    onFocus: function onFocus() {
+      if (this.initialText != "" && !this.is_read_initial_tex) {
+        this.is_read_initial_tex = true;
+        return;
+      }
+
+      this.is_show = true;
+    },
     onNewItem: function onNewItem() {
       this.$emit("newitem", this.text);
     },
@@ -3662,6 +3679,11 @@ var axios = __webpack_require__("bc3a");
   },
   watch: {
     text: function text(val) {
+      if (!this.is_read_initial_tex) {
+        this.is_read_initial_tex = true;
+        return;
+      }
+
       this.onFilter();
     }
   }
