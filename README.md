@@ -46,7 +46,7 @@ const app = new Vue({
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 placeholder | String | '' | Placeholder text
-showNewBotton | Boolean | true | Show or noo the new bottom
+showNewBotton | Boolean | true | Show or not the new bottom
 searchByField | Boolean | true | Enable find by field name of datasource
 txtNotFound | String | 'No one found with that name' | Text when there is no data
 txtBtnNew | String | 'Create A New Element' | Text of new button 

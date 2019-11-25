@@ -151,7 +151,7 @@ export default {
     search() {
       let url = this.ApiSource;
       if(this.searchByField){
-        url = "?" + this.SourceField + "=" + this.text
+        url += "?" + this.SourceField + "=" + this.text
       }
       axios
         .get(url)
