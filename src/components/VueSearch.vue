@@ -1,22 +1,26 @@
 <template>
   <div>
-    <div class="content-input">
+    <div class="content-input" id="input-content">
       <input
         v-model="text"
         @keydown="writedown($event)"
         @keyup="writeup($event)"
+        @focus="is_show = true"
         class="input-txt"
+        :class="inputClass"
         type="text"
+        :placeholder="placeholder"
       />
-      <ul class="ui-autocomplete" :class="{active:text!=''}">
-        <div v-if="text!=''" class="show-result">
+
+      <ul
+        class="ui-autocomplete"
+        :class="{active:text!='' && is_show}"
+      >
+        <div v-if="text!='' && is_show" class="show-result">
           <li :key="idx" v-for="(dato,idx) of dataFiltered" class="ui-menu-item item-found">
-            <a @click="$emit('itemselected',dato)" class="ui-item-result person" tabindex="-1">
+            <a @click="onSelectItem(dato)" class="ui-item-result person" tabindex="-1">
               <span class="f-l mr-1 avatar">
-                <img
-                  src="https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=68x68%23"
-                  alt="person avatar"
-                />
+                <img :src="imgPhoto" alt="person avatar" />
               </span>
               <div class="info-container">
                 <div style="max-width: 150px;">
@@ -30,9 +34,9 @@
                   </div>
                 </div>
                 <div class="info-group info-end">
-                  <em class="age-group">Adult</em>
+                  <em v-if="dato.type" class="age-group">Adult</em>
                   <em class="membership"></em>
-                  <em class="address">No Address</em>
+                  <em v-if="dato.addess" class="address">No Address</em>
                 </div>
               </div>
               <div></div>
@@ -42,13 +46,13 @@
 
         <li v-if="dataFiltered.length==0" class="ui-menu-item">
           <a class="ui-item-result person-not-found ui-menu-item-wrapper" tabindex="-1">
-            <div class="text-helper">No one found with that name.</div>
+            <div class="text-helper">{{txtNotFound}}</div>
             <span class="icon-wrap"></span>
           </a>
         </li>
 
-        <li @click="$emit('newitem')" class="ui-menu-item">
-          <a class="create-new-person btn" id="ui-id-11" tabindex="-1">Create A New Person</a>
+        <li class="ui-menu-item">
+          <a @click="onNewItem()" class="create-new-person btn">{{txtBtnNew}}</a>
         </li>
       </ul>
     </div>
@@ -59,10 +63,20 @@
 const axios = require("axios");
 
 export default {
-  name: "HelloWorld",
+  name: "vue-search",
   props: {
     placeholder: String,
+    txtNotFound: {
+      type: String,
+      default: "No one found with that name."
+    },
+    txtBtnNew: {
+      type: String,
+      default: "Create A New Person"
+    },
+    inputClass: Object,
     model: String,
+    imgPhoto: String,
     ApiSource: {
       type: String,
       default: ""
@@ -81,16 +95,39 @@ export default {
   data() {
     return {
       text: "",
+      is_show: true,
       typingTimer: null,
       doneTypingInterval: 300,
       SourceData: [],
-      dataFiltered: [],
+      dataFiltered: []
     };
   },
   mounted() {
     this.SourceData = this.DataDefault;
+    document.addEventListener("click", (evt) => {
+      var flyoutElement = document.getElementById("input-content"),
+        targetElement = evt.target; // clicked element
+      do {
+        if (targetElement == flyoutElement) {
+          return;
+        }
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+
+      // This is a click outside.
+      this.is_show = false
+    });
   },
   methods: {
+    onNewItem: function() {
+      this.$emit("newitem",this.text);
+    },
+    onSelectItem(dato) {
+      this.$emit("itemselected", dato);
+      this.is_show = false;
+      this.text = dato.name;
+    },
     writeup() {
       clearTimeout(this.typingTimer);
       this.typingTimer = setTimeout(this.doneTyping, this.doneTypingInterval);
@@ -105,19 +142,16 @@ export default {
     },
     search() {
       axios
-        .get(this.ApiSource)
+        .get(this.ApiSource + "?" + this.SourceField + "=" + this.text)
         .then(res => {
           this.SourceData = res.data;
           this.onFilter();
-        })
-        .catch(e => {
-          console.log(e);
-        }).finally(()=>{
         });
     },
     onFilter() {
       let textFilter = this.text.toLowerCase();
       this.dataFiltered = [];
+      this.is_show = true;
       for (let i = 0; i < this.SourceData.length; i++) {
         let record = this.SourceData[i][this.SourceField];
         if (record) {

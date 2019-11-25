@@ -2,7 +2,13 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     
-    <vue-search @newitem="''" @itemselected="''" :source-field="'name'" :api-source="'https://jsonplaceholder.typicode.com/users'"></vue-search>
+    <vue-search 
+    :img-photo="'https://people.planningcenteronline.com/static/no_photo_thumbnail_gray.png?g=68x68%23'" 
+    @newitem="newitem()" 
+    @itemselected="itemselected($event)" 
+    :source-field="'name'" 
+    :api-source="'https://jsonplaceholder.typicode.com/users'"
+    ></vue-search>
 
   </div>
 </template>
@@ -14,6 +20,14 @@ export default {
   name: 'app',
   components: {
     VueSearch
+  },
+  methods:{
+    itemselected(ev){
+      console.log('ok',ev)
+    },
+    newitem(){
+      console.log('newitem')
+    },
   }
 }
 </script>

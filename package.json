@@ -1,11 +1,11 @@
 {
   "name": "vue-input-search",
-  "version": "0.0.1",
+  "version": "0.0.14",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "prod": "vue-cli-service build --target lib --name vue-search",
+    "prod": "vue-cli-service build --target lib --name vue-search src/components/VueSearch.vue",
     "lint": "vue-cli-service lint"
   },
   "author": {
