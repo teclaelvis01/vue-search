@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <div class="content-input" id="input-content">
+    <div :class="{'content-input':enableClassBase}" id="input-content">
       <input
         v-model="text"
         @keydown="writedown($event)"
@@ -56,7 +55,6 @@
         </li>
       </ul>
     </div>
-  </div>
 </template>
 
 <script>
@@ -66,6 +64,10 @@ export default {
   name: "vue-search",
   props: {
     placeholder: String,
+    enableClassBase: {
+      type:Boolean,
+      default:true
+    },
     showNewBotton: {
       type:Boolean,
       default:true
