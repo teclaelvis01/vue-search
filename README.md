@@ -46,6 +46,7 @@ const app = new Vue({
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 placeholder | String | '' | Placeholder text
+initialText | String | '' | Text initial
 showNewBotton | Boolean | true | Show or not the new bottom
 isRequired | Boolean | false | is required
 enableClassBase | Boolean | true | Show or not 'content-input'
