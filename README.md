@@ -1,8 +1,6 @@
 ![input vue search](input-vue-search.jpg)
 ## inp-v-search
 
-[![npm](https://img.shields.io/npm/v/vue-instant.svg) ![npm](https://img.shields.io/npm/dm/vue-instant.svg)](https://www.npmjs.com/package/vue-instant)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 ## Live
 
